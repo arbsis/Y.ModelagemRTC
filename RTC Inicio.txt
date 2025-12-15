@@ -1,0 +1,19 @@
+Analisar e Criar dominios necessários para não repetir os campos, o dominio irá ser RTC_NomeCampo
+
+CCLASSTRIB_OFICIAL > RTC_CCLASSTRIB --VIRÁ PREENCHIDA POR NÓS
+NCM_NBS_CCLASSTRIB > RTC_NCM_CCLASSTRIB --VIRÁ PREENCHIDA POR NÓS
+TIPO_PARTICIPANTE > RTC_PARTICIPANTE --VIRÁ PREENCHIDA POR NÓS
+TOP > RTC_OPERACOES --VIRÁ PREENCHIDA POR NÓS E O USUARIO PODERÁ PREENCHER ACIMA DE 100
+TOP_PRODUTO > RTC_OPERACOES_PRODUTO --SERÁ VAZIA POR ENQTO
+
+Tabela de Itens do Saac adicionar os campos:
+RTC_CCLASSTRIB > usar dominio permite null
+RTC_REGRA > usar domininio, permite null.
+
+As 3 procedures, fazer as adapctações para o SAAC com os nomes corretos e tabelas corretas.
+
+
+
+RTC_CCLASSTRIB_C = 6 Char
+RTC_CST_C = 3 Char
+RTC_PERCENTUAL = Numeric size 7 scale 4
