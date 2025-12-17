@@ -1,0 +1,57 @@
+Contexto e entradas
+Você recebeu dois arquivos anexados:
+dadosOriginais.txt contendo var dadosOriginais = [...] com a estrutura oficial usada para montar as regras e anexos.
+CCLASSTRIB_OFICIAL.txt contendo o estado atual dos INSERTs que já estão em produção (usar apenas como exemplo).
+
+Objetivo
+Gerar um pacote de saída com:
+RTC_CCLASSTRIB_inserts.txt — INSERTs completos no layout RTC_CCLASSTRIB.
+
+
+Esquema de destino (definitivo)
+CREATE TABLE RTC_CCLASSTRIB (
+    CCLASSTRIB           RTC_CCLASSTRIB_C,   -- ex.: '200003'
+    CST_IBSCBS           RTC_CST_C,              -- CST-IBS/CBS
+    DESCR_CST_IBSCBS     VCDESCRICAO255,             -- Descrição CST-IBS/CBS
+    NOME_CCLASSTRIB      VCDESCRICAO255,             -- Nome cClassTrib
+    DESCR_CCLASSTRIB     BLOB SUB_TYPE TEXT,       -- Descrição completa
+    LC_REDACAO           BLOB SUB_TYPE TEXT,       -- Redação (LC)
+    LC_214_25            BLOB SUB_TYPE TEXT,       -- Referência LC 214/25
+    TIPO_ALIQUOTA        VCDESCRICAO50,              -- Tipo da alíquota
+    PREDIBS              RTC_PERCENTUAL,             -- Redução IBS (%)
+    PREDCBS              RTC_PERCENTUAL,             -- Redução CBS (%)
+    IND_REDUCAO_BC       SMALL,                 -- 0/1
+    IND_GTRIB_REGULAR    SMALL,
+    IND_GCRED_PRESOPER   SMALL,
+    IND_GMONO_PADRAO     SMALL,
+    IND_GMONO_RETEN      SMALL,
+    IND_GMONO_RET        SMALL,
+    IND_GMONO_DIF        SMALL,
+    IND_GESTORNO_CRED    SMALL,
+    CREDITO_PARA         BLOB SUB_TYPE TEXT,
+    DINIVIG              DT,                     -- Início vigência
+    DFIMVIG              DT,                     -- Fim vigência
+    DATA_ATUALIZACAO     DT,
+    IND_NFE_ABI          SMALL,
+    IND_NFE              SMALL,
+    IND_NFCE             SMALL,
+    IND_CTE              SMALL,
+    IND_CTEOS            SMALL,
+    IND_BPE              SMALL,
+    IND_BPETA            SMALL,
+    IND_BPETM            SMALL,
+    IND_NF3E             SMALL,
+    IND_NFSE             SMALL,
+    IND_NFSE_VIA         SMALL,
+    IND_NFCOM            SMALL,
+    IND_NFAG             SMALL,
+    IND_NFGAS            SMALL,
+    IND_DERE             SMALL,
+    ANEXO                VCDESCRICAO50,
+    LINK                 VCDESCRICAO512,
+	
+	CONSTRAINT PK_RTC_CCLASSTRIB PRIMARY KEY (CCLASSTRIB) USING INDEX PK_RTC_CCLASSTRIB
+);
+
+Para cada Classificação Tributária (CodClassTrib):
+DINIVIG = DthIniVig do objeto ClassificacoesTributarias

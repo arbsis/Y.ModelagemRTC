@@ -1,4 +1,4 @@
-# Prompt – Atualização de `NCM_NBS_CCLASSTRIB` a partir dos anexos
+# Prompt – Atualização de `RTC_NCM_CCLASSTRIB` a partir dos anexos
 
 ## Contexto e entradas
 
@@ -11,12 +11,12 @@ Você recebeu dois arquivos anexados:
 
 Gerar um *pacote de saída* com:
 
-1) **`ncm_nbs_cclasstrib_inserts.sql`** — INSERTs completos no layout **NCM_NBS_CCLASSTRIB**, ordenados e **sem duplicatas**.  
-2) **`ncm_nbs_cclasstrib_delta.sql`** — *apenas as diferenças* (ADICIONAR/REMOVER/ALTERAR) **entre o que foi reconstruído a partir do `dadosOriginais` e o que existe hoje no `ncm_cclasstrib.sql`**.  
-3) **`ncm_nbs_cclasstrib_auditoria.csv`** — CSV auxiliar com colunas: `NCM_NBS;TIPO;ANEXO;ARTIGO;REGRA_RTC;CCLASSTRIB`.  
-4) **`ncm_nbs_cclasstrib_diff_report.txt`** — relatório humano de diffs, incluindo validações pedidas abaixo.
+1) **`RTC_NCM_CCLASSTRIB_inserts.sql`** — INSERTs completos no layout **RTC_NCM_CCLASSTRIB**, ordenados e **sem duplicatas**.  
+2) **`RTC_NCM_CCLASSTRIB_delta.sql`** — *apenas as diferenças* (ADICIONAR/REMOVER/ALTERAR) **entre o que foi reconstruído a partir do `dadosOriginais` e o que existe hoje no `ncm_cclasstrib.sql`**.  
+3) **`RTC_NCM_CCLASSTRIB_auditoria.csv`** — CSV auxiliar com colunas: `NCM_NBS;TIPO;ANEXO;ARTIGO;REGRA;CCLASSTRIB`.  
+4) **`RTC_NCM_CCLASSTRIB_diff_report.txt`** — relatório humano de diffs, incluindo validações pedidas abaixo.
 
-> **Regra de ouro:** **só** gere deltas (arquivos 2 e 4 com conteúdo “não vazio”) se o `dadosOriginais` resultar em mudanças **reais** face ao `ncm_cclasstrib.sql`. Se não houver mudanças, gere `ncm_nbs_cclasstrib_delta.sql` com apenas um comentário `-- SEM MUDANÇAS` e o relatório com contagens zeradas.
+> **Regra de ouro:** **só** gere deltas (arquivos 2 e 4 com conteúdo “não vazio”) se o `dadosOriginais` resultar em mudanças **reais** face ao `ncm_cclasstrib.txt`. Se não houver mudanças, gere `RTC_NCM_CCLASSTRIB_delta.sql` com apenas um comentário `-- SEM MUDANÇAS` e o relatório com contagens zeradas.
 
 ---
 
